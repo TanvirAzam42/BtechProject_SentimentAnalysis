@@ -1,7 +1,9 @@
 import React from 'react';
+import './AboutUs.css';
+
 const AboutUs = () => {
     return (
-        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', lineHeight: '1.6' }}>
+        <div className='about-us-container'>
             <h1>About Us</h1>
             <section>
                 <h2>Project Overview</h2>

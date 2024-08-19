@@ -1,0 +1,26 @@
+.about-us-container {
+    text-align: center;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: rgb(182, 171, 241); /* Light background */
+    color: black; /* Dark text color for contrast */
+     padding: 20px;
+    font-family: Arial, sans-serif;
+    
+  }
+  
+  section {
+    margin-bottom: 20px; /* Adds some space between sections for readability */
+}
+
+h2 {
+    color: #0b0b0b; /* A dark color for section headers */
+}
+
+p {
+    color: #000000; /* A slightly lighter color for paragraph text */
+}
+
+a {
+    color: #007bff; /* Blue color for links */
+}
