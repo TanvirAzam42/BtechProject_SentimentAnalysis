@@ -13,6 +13,8 @@ const Header = () => {
             <li><a href="/upload">Upload Data</a></li>
             <li><a href="/reports">View Reports</a></li>
             <li><a href="/settings">Settings</a></li>
+            <li><a href="/AboutUs">AboutUs</a></li>
+
             <li className="auth-buttons">
               <a href="/signup" className="button">Signup</a>
               <a href="/login" className="button">Login</a>
