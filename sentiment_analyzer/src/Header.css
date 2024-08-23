@@ -1,64 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 .header {
-    background-color: #007BFF; 
-    color: white;
-    padding: 0; 
-    height: 10vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 0;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color: #007BFF;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px; /* Move nav-links 10px down */
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: #007BFF;
+  text-decoration: none; /* Remove underline */
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease, font-weight 0.3s ease;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background-color: #007BFF;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #0056b3;
+  transform: translateY(-2px); /* Apply upward movement on hover */
+  font-weight: 500; /* Slightly increase font weight */
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+  left: 0%;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 20px; /* Adjust the gap between buttons here */
+}
+
+.button {
+  background-color: #007BFF;
+  color: white; /* Button text color is white */
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Change cursor to pointer */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow expands on hover */
+  color: #f1f1f1; /* Slightly lighter text on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
   .container {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    max-width: 1200px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .header {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    display: none; /* Hidden by default on mobile */
+    margin-top: 0; /* Reset margin on mobile */
+  }
+
+  .nav-links.open {
+    display: flex; /* Show menu when open */
+  }
+
+  .nav-links li {
+    text-align: left;
     width: 100%;
   }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    position: relative;
-  }
-  
+
   .nav-links li a {
-    color: white;
-    text-decoration: none;
     font-size: 18px;
   }
-  
-  .nav-links li a:hover {
-    text-decoration: underline;
-  }
-  
+
   .auth-buttons {
-    display: flex;
-    gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 15px; /* Adjust the gap for mobile view */
   }
-  
+
   .button {
-    background-color: white;
-    color: #007BFF; 
     padding: 10px 20px;
-    font-size: 16px;
-    border: 1px solid #007BFF; 
-    border-radius: 5px;
+    width: 100%;
     text-align: center;
-    text-decoration: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
     cursor: pointer;
+    margin-left: auto; /* Aligns the menu icon to the right */
   }
-  
-  .button:hover {
-    background-color: #e6f0ff; 
+
+  .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    transition: all 0.3s ease;
   }
-  
+
+  .bar.open:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+
+  .bar.open:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
