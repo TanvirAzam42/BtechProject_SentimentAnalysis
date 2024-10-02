@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Signup.css';
 
 function Signup() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -13,6 +14,7 @@ function Signup() {
       alert('Passwords do not match');
       return;
     }
+    console.log('Name:', name);
     console.log('Email:', email);
     console.log('Password:', password);
   };
@@ -21,6 +23,15 @@ function Signup() {
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
+        <div className="form-group">
+          <label>Name:</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
         <div className="form-group">
           <label>Email:</label>
           <input
