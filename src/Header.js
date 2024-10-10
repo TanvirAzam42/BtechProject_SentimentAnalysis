@@ -26,8 +26,7 @@ const Header = () => {
             <li><a href="/settings">Settings</a></li>
             <li><a href="/AboutUs">About Us</a></li>
             <li className="auth-buttons">
-              <button className="button" onClick={() => window.location.href='/signup'}>Signup</button>
-              <button className="button" onClick={() => window.location.href='/login'}>Login</button>
+              <button className="button" onClick={() => window.location.href='/signup'}>logout</button>
             </li>
           </ul>
         </nav>

@@ -1,20 +1,41 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Signup.css';
 
 function Signup() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert('Passwords do not match');
       return;
     }
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    try {
+      const response = await fetch('http://localhost:5001/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      if (response.ok) {
+        alert('Signup successful! Please log in.');
+        navigate('/login');
+      } else {
+        const data = await response.json();
+        alert(data.message || 'Signup failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   return (
@@ -22,12 +43,23 @@ function Signup() {
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
         <div className="form-group">
+          <label>Name:</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            placeholder="Enter your name"
+          />
+        </div>
+        <div className="form-group">
           <label>Email:</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            placeholder="Enter your email"
           />
         </div>
         <div className="form-group">
@@ -37,6 +69,7 @@ function Signup() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder="Enter your password"
           />
         </div>
         <div className="form-group">
@@ -46,10 +79,11 @@ function Signup() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
+            placeholder="Confirm your password"
           />
         </div>
         <button type="submit">Sign Up</button>
-        <p>
+        <p className="signup-login-link">
           Already have an account? <Link to="/login">Login</Link>
         </p>
       </form>

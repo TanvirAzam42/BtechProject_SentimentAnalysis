@@ -1,15 +1,34 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
-function Login() {
+function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+    try {
+      const response = await fetch('http://localhost:5001/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        // Call onLogin to update the isAuthenticated state in App.js
+        onLogin();
+        navigate('/dashboard'); // Navigate to the dashboard after login
+      } else {
+        alert('Login failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
 
   return (
@@ -36,7 +55,7 @@ function Login() {
         </div>
         <button type="submit">Login</button>
         <p>
-          Don't have an account? <Link to="/signup">Sign Up</Link>
+          Don't have an account? <a href="/signup">Sign Up</a>
         </p>
       </form>
     </div>
