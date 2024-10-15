@@ -1,0 +1,95 @@
+/* src/components/UploadData.css */
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('./assets/Image3.jpg'); /* Add the path to your image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+  }
+  /* Add this to src/components/UploadData.css */
+
+.download-btn {
+    background-color: #28a745; /* Blue button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Larger font size */
+    margin-top: 10px; /* Space above the button */
+  }
+  
+  .download-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .info-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%; /* Set the width to 60% for a neat layout */
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Ensures text is aligned to the left */
+  }
+  
+  .info-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .info-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .info-container ul {
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0; /* Removes left padding */
+  }
+  
+  .info-container ul li {
+    margin-bottom: 5px;
+  }
+  
+  .upload-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .file-input {
+    margin-bottom: 15px;
+  }
+  
+ 
+  
+  .upload-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .upload-btn:hover {
+    background-color: #0056b3;
+  }
+  
