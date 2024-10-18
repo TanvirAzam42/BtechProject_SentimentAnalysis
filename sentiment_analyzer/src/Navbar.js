@@ -10,8 +10,8 @@ const Navbar = () => {
       <ul className="nav-links">
         <li><Link to="/upload">Upload Data</Link></li>
         <li><Link to="/Advanced">Advanced</Link></li>
-        <li><Link to="/services">About Us</Link></li>
-        <li><Link to="/contact">Overview</Link></li>
+        <li><Link to="/AboutUs">About Us</Link></li>
+        <li><Link to="/Overveiw">Overview</Link></li>
         <li><button onClick={() => { localStorage.removeItem('token'); window.location.href = '/login'; }} className="logout-btn">Logout</button></li>
       </ul>
     </nav>

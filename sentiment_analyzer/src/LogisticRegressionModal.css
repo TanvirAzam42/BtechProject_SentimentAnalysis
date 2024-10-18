@@ -1,0 +1,50 @@
+/* src/components/LogisticRegressionModal.css */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  .modal-content {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .open-modal-btn, .copy-btn, .close-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  .open-modal-btn:hover, .copy-btn:hover, .close-btn:hover {
+    background-color: #218c4b;
+  }
+  
+  .code-block {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+  }
+  
+  .copy-btn, .close-btn {
+    padding: 5px 10px;
+    margin-top: 20px;
+  }
+  

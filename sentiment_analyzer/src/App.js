@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
+import Overveiw from './Overview';
 import Dashboard from './Dashboard';
 import AboutUs from './AboutUs';
 import UploadData from './UploadData'; // Import the UploadData component
@@ -20,9 +21,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/upload" element={<UploadData />} /> {/* Upload Data route */}
           <Route path="/advanced" element={<AdvancedPage />} /> 
+          <Route path="/Overveiw" element={<Overveiw />} /> 
+
           <Route path="/" element={<Dashboard />} />
         </Routes>
       </div>
