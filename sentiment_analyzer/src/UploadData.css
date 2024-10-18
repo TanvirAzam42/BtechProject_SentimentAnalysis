@@ -11,7 +11,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('./assets/Image3.jpg'); /* Replace with your image path */
+  background-image: url('./assets/image3.jpg'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   
