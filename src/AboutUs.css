@@ -2,25 +2,71 @@
     text-align: center;
     padding: 20px;
     line-height: 1.6;
-    background-color: rgb(182, 171, 241); /* Light background */
+    background-color: rgb(182, 171, 241); /* Light background from your version */
     color: black; /* Dark text color for contrast */
-     padding: 20px;
     font-family: Arial, sans-serif;
-    
-  }
-  
-  section {
-    margin-bottom: 20px; /* Adds some space between sections for readability */
+    box-sizing: border-box;
+    width: 100%;
 }
 
-h2 {
-    color: #0b0b0b; /* A dark color for section headers */
+/* Heading styling */
+h1, h2 {
+    color: #0b0b0b; /* Dark color for headings (from your version) */
+    text-align: center;
 }
 
+/* Section styling */
+.about-section {
+    margin: 20px 0;
+    background-color: #fff; /* Light background for sections */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Paragraph styling */
 p {
-    color: #000000; /* A slightly lighter color for paragraph text */
+    color: #000000; /* Slightly lighter color for paragraph text */
+    line-height: 1.6;
 }
 
+/* Unordered list styling */
+ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Link styling */
 a {
     color: #007bff; /* Blue color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+/* Team container */
+.team-container {
+    display: flex;
+    flex-wrap: wrap; /* Use wrap for better layout in smaller screens */
+    justify-content: center;
+    gap: 10px; /* Adds space between team members */
+}
+
+/* Team member styling */
+.team-member {
+    background-color: #e0f7fa; /* Light blue background */
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px; /* Consistent width for each team member */
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    font-size: 16px;
+}
+
+.team-member strong {
+    color: #27ae60; /* Green color for the team member names */
 }

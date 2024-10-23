@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+<<<<<<< Updated upstream:src/Login.js
 import { useNavigate } from 'react-router-dom';
+=======
+import { useNavigate, Link } from 'react-router-dom';
+>>>>>>> Stashed changes:sentiment_analyzer/src/Login.js
 import './Login.css';
 
 function Login({ onLogin }) {
@@ -19,6 +23,7 @@ function Login({ onLogin }) {
       });
 
       if (response.ok) {
+<<<<<<< Updated upstream:src/Login.js
         // Call onLogin to update the isAuthenticated state in App.js
         onLogin();
         navigate('/dashboard'); // Navigate to the dashboard after login
@@ -28,6 +33,20 @@ function Login({ onLogin }) {
     } catch (error) {
       console.error('Error during login:', error);
       alert('An error occurred. Please try again.');
+=======
+        // Save logged-in user email to localStorage
+        localStorage.setItem('loggedInUser', email);
+        
+        // Navigate to dashboard upon successful login
+        navigate('/dashboard');
+      } else {
+        const data = await response.json();
+        alert(data.message || 'Login failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred. Please try again later.');
+>>>>>>> Stashed changes:sentiment_analyzer/src/Login.js
     }
   };
 

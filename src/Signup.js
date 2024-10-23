@@ -11,12 +11,18 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Password matching validation
     if (password !== confirmPassword) {
       alert('Passwords do not match');
       return;
     }
 
     try {
+<<<<<<< Updated upstream:src/Signup.js
+=======
+      // Sending signup request to the backend
+>>>>>>> Stashed changes:sentiment_analyzer/src/Signup.js
       const response = await fetch('http://localhost:5001/api/auth/signup', {
         method: 'POST',
         headers: {
@@ -25,9 +31,16 @@ function Signup() {
         body: JSON.stringify({ name, email, password }),
       });
 
+<<<<<<< Updated upstream:src/Signup.js
       if (response.ok) {
         alert('Signup successful! Please log in.');
         navigate('/login');
+=======
+      // Handling response from backend
+      if (response.ok) {
+        alert('Signup successful! Please log in.');
+        navigate('/login'); // Redirect to login page
+>>>>>>> Stashed changes:sentiment_analyzer/src/Signup.js
       } else {
         const data = await response.json();
         alert(data.message || 'Signup failed. Please try again.');
