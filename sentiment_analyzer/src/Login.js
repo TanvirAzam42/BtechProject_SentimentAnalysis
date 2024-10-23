@@ -1,15 +1,37 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+    try {
+      const response = await fetch('http://localhost:5001/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        // Save logged-in user email to localStorage
+        localStorage.setItem('loggedInUser', email);
+        
+        // Navigate to dashboard upon successful login
+        navigate('/dashboard');
+      } else {
+        const data = await response.json();
+        alert(data.message || 'Login failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   return (

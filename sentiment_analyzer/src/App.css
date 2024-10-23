@@ -24,10 +24,23 @@
   color: rgb(255, 255, 255);
 }
 
-.App-link {
-  color: #61dafb;
+/* Enhancements for responsive design */
+@media (max-width: 600px) {
+  .App-header {
+    font-size: calc(8px + 2vmin); /* Adjust font size for smaller screens */
+  }
 }
 
+.App-link {
+  color: #61dafb;
+  transition: color 0.3s ease-in-out; /* Added smooth hover transition */
+}
+
+.App-link:hover {
+  color: #21a1f1; /* Darker blue on hover */
+}
+
+/* Logo animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,4 +49,3 @@
     transform: rotate(360deg);
   }
 }
-

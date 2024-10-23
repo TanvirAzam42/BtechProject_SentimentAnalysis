@@ -15,23 +15,22 @@
   background: white;
   padding: 20px;
   border-radius: 5px;
-  position: relative;
   width: 80%;
   max-width: 600px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative; /* Ensure that the close button is positioned relative to this */
+  position: relative; /* Ensure the close button is positioned correctly */
+  overflow: hidden; /* Prevent overflow issues */
 }
 
 .close-button {
   position: absolute; /* Position it absolutely inside the modal */
-  top: 5px; /* Align it to the top */
-  right: 5px; /* Align it to the right */
+  top: 10px; /* Align it slightly lower for spacing */
+  right: 10px; /* Align it to the right */
   background-color: transparent; /* No background for a minimal look */
   color: black; /* Black 'X' to match the window-style button */
   border: none; /* No border for the close button */
   font-size: 18px; /* Larger font size for a window-like 'X' */
   cursor: pointer; /* Pointer cursor to show it's clickable */
-  padding: 0; /* No padding */
   line-height: 1; /* Line-height set for a compact look */
 }
 
@@ -48,10 +47,11 @@
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .copy-button:hover {
-  opacity: 0.8;
+  background-color: #45a049; /* Darker green on hover */
 }
 
 pre {
@@ -61,5 +61,7 @@ pre {
   padding: 15px;
   border-radius: 4px;
   max-height: 400px;
-  overflow-y: auto;
+  overflow-y: auto; /* Enable vertical scrolling for large blocks of code */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+  font-size: 14px;
 }

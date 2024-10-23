@@ -16,12 +16,12 @@ const Modal = ({ isOpen, onClose, code }) => {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}> {/* Prevent closing on modal content click */}
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}> {/* Prevent modal from closing on content click */}
         <button className="close-button" onClick={onClose}>X</button>
-        <pre style={{ whiteSpace: 'pre-wrap', textAlign: 'left' }}> {/* Ensure code formatting */}
-          {code}
+        <pre className="code-block" style={{ whiteSpace: 'pre-wrap', textAlign: 'left' }}>
+          {code} {/* Display code in a preformatted block */}
         </pre>
-        <button onClick={handleCopy} className="copy-button">Copy to Clipboard</button> {/* Copy to clipboard button */}
+        <button onClick={handleCopy} className="copy-button">Copy to Clipboard</button> {/* Copy button */}
       </div>
     </div>
   );

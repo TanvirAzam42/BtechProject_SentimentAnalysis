@@ -1,4 +1,3 @@
-// src/components/AboutUs.js
 import React from 'react';
 import './AboutUs.css';
 
@@ -7,16 +6,22 @@ const AboutUs = () => {
         <div className='about-us-container'>
             <h1>About Us</h1>
 
-           
-
+            <section>
+                <h2>Project Overview</h2>
+                <p>
+                    Welcome to our Sentiment Analysis project focused on analyzing Amazon reviews in the electronics category. 
+                    Our goal is to provide insightful data that helps businesses and consumers better understand product sentiment.
+                </p>
+            </section>
+ 
             <div className='about-section'>
                 <h2>Team</h2>
                 <p>Our project is driven by a passionate team of data enthusiasts:</p>
                 <div className="team-container">
                     <div className="team-member"><strong>Prasad Pawar</strong> - Web Developer</div>
-                    <div className="team-member"><strong>Hrushikesh Kulkarni</strong> - Data Analyst</div>
+                    <div className="team-member"><strong>Hrushikesh Kulkarni</strong> - Data Analyst & Developer</div>
                     <div className="team-member"><strong>Tanvir Auti</strong> - Data Analyst</div>
-                    <div className="team-member"><strong>Zafar Dakhni</strong> - Web development</div>
+                    <div className="team-member"><strong>Zafar Dakhani</strong> - Data Analyst & Web Developer</div>
                 </div>
                 <p>
                     We are guided by our mentor, <strong>Usha Joglekar</strong>, who has provided invaluable insights and support throughout the project.
@@ -25,13 +30,13 @@ const AboutUs = () => {
 
             <div className='about-section'>
                 <h2>Technology Stack</h2>
-                <p>Our sentiment analysis is powered by a range of tools and technologies:</p>
-                <center>
-                
+                <p>
+                    Our sentiment analysis is powered by a range of tools and technologies:
+                </p>
+                <ul>
                     <li>Python, Pandas, NLTK for data analysis and sentiment modeling</li>
                     <li>React.js, HTML, CSS for web development</li>
-                
-                </center>
+                </ul>
             </div>
 
             <div className='about-section'>
