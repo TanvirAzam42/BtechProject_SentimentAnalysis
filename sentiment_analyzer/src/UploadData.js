@@ -5,6 +5,8 @@ import {
 } from 'recharts';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+// Remove History import
+// import History from './History';
 
 // Function to analyze sentiment
 const analyzeSentiment = (data, targetColumn) => {
@@ -32,6 +34,7 @@ const UploadData = () => {
   const [reportData, setReportData] = useState([]);
   const [user, setUser] = useState('');
 
+  // Get the logged-in user from localStorage
   useEffect(() => {
     const loggedInUser = localStorage.getItem('currentUser');
     if (loggedInUser) {
@@ -91,7 +94,6 @@ const UploadData = () => {
   };
 
   const downloadCSV = () => {
-    // CSV downloading logic
     const csvContent = `data:text/csv;charset=utf-8,Total Reviews,Positive Reviews,Negative Reviews,Neutral Reviews\n${reportData.length},${reportData.filter(row => row.sentiment === 'Positive').length},${reportData.filter(row => row.sentiment === 'Negative').length},${reportData.filter(row => row.sentiment === 'Neutral').length}`;
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
@@ -118,9 +120,7 @@ const UploadData = () => {
         <h2>Instructions for Uploading Dataset</h2>
         <p>
           Sentiment analysis is an NLP technique that identifies and classifies emotions in text as positive,
-          negative, or neutral. It helps understand opinions in reviews, social media, and feedback. There are
-          fine-grained (detailed sentiment levels), aspect-based (sentiment on specific features), and emotion detection types.
-          It's used in marketing, customer service, finance, and politics to gauge public opinion and improve decision-making.
+          negative, or neutral. It helps understand opinions in reviews, social media, and feedback.
         </p>
         <form onSubmit={handleSubmit} className="upload-form">
           <input type="file" onChange={handleFileChange} className="file-input" accept=".csv" />
@@ -168,8 +168,8 @@ const UploadData = () => {
             </div>
           )}
           <div className="download-buttons">
-            <button onClick={downloadCSV} className="download-btn">Download CSV Report</button>
-            <button onClick={downloadPDF} className="download-btn">Download PDF Report</button>
+            <button type="button" onClick={downloadCSV} className="download-btn">Download CSV Report</button>
+            <button type="button" onClick={downloadPDF} className="download-btn">Download PDF Report</button>
           </div>
         </form>
       </div>

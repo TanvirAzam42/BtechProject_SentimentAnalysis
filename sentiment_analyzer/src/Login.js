@@ -19,8 +19,8 @@ function Login() {
       });
 
       if (response.ok) {
-        // Save logged-in user email to localStorage
-        localStorage.setItem('loggedInUser', email);
+        // Save logged-in user email to localStorage with the correct key
+        localStorage.setItem('currentUser', email);
         
         // Navigate to dashboard upon successful login
         navigate('/dashboard');
