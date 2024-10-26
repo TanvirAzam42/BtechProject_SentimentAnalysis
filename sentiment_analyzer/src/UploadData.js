@@ -25,6 +25,27 @@ const analyzeSentiment = (data, targetColumn) => {
   });
 };
 
+// Function to save analysis results to backend
+const saveAnalysisResults = async (results) => {
+  if (!results || !results.totalReviews) {
+    console.warn("No sentiment results to save.");
+    return;
+  }
+
+  try {
+    const response = await fetch('http://localhost:5001/api/history/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(results),
+    });
+    if (!response.ok) throw new Error(`Failed to save results: ${response.statusText}`);
+    const data = await response.json();
+    console.log("Save Result:", data);
+  } catch (error) {
+    console.error("Error saving results:", error);
+  }
+};
+
 const UploadData = () => {
   const [file, setFile] = useState(null);
   const [targetColumn, setTargetColumn] = useState('');
@@ -73,18 +94,17 @@ const UploadData = () => {
         const sentimentReport = analyzeSentiment(data, targetColumn);
         setReportData(sentimentReport);
 
-        // Save the result in localStorage for history, including user email
-        const reportHistory = JSON.parse(localStorage.getItem('reportHistory')) || [];
-        const newReport = {
-          user: user, // Save with the logged-in user
-          timestamp: new Date().toISOString(),
+        // Prepare data to save to backend
+        const resultsData = {
+          user: user,
           totalReviews: sentimentReport.length,
           positiveReviews: sentimentReport.filter(row => row.sentiment === 'Positive').length,
           negativeReviews: sentimentReport.filter(row => row.sentiment === 'Negative').length,
           neutralReviews: sentimentReport.filter(row => row.sentiment === 'Neutral').length,
         };
 
-        localStorage.setItem('reportHistory', JSON.stringify([newReport, ...reportHistory]));
+        // Save the analysis results to the backend
+        saveAnalysisResults(resultsData);
       };
 
       reader.readAsText(file);
