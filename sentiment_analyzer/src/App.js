@@ -8,6 +8,7 @@ import UploadData from './UploadData';
 import AdvancedPage from './AdvancedPage';
 import History from './History'; 
 import Login from './Login'; // <--- Import the Login component
+import Overview from './Overview';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/Overview" element={<Overview />} />
+
           <Route path="/upload" element={<UploadData />} />
           <Route path="/advanced" element={<AdvancedPage />} />
           <Route path="/history" element={<History />} /> 

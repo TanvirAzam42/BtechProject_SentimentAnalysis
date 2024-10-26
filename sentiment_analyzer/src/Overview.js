@@ -17,14 +17,12 @@ const Overview = () => {
 
       <section className="overview-section">
         <h2>Key Features</h2>
-        <center>
-       
+        <ul>
           <li>Sentiment Classification using VADER Sentiment Analyzer</li>
           <li>Data Preprocessing and Cleaning</li>
           <li>Model Evaluation and Performance Metrics</li>
           <li>Interactive User Interface for Data Upload and Visualization</li>
-        
-        </center>
+        </ul>
       </section>
 
       <section className="overview-section">

@@ -28,9 +28,10 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
-p {
+/* Justify text in description paragraphs */
+.container p {
   margin-bottom: 10px;
-  text-align: center;
+  text-align: justify; /* Justify text alignment */
   font-size: 14px;
   line-height: 1.6; /* Ensure readability */
 }
@@ -41,7 +42,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   align-self: center; /* Centers the button horizontally */
-  background-color: rgb(0, 103, 215); /* Button color from his version */
+  background-color: rgb(0, 103, 215); /* Button color */
   color: white; /* Set text color to white for better contrast */
   border: none; /* Remove border for a cleaner look */
   border-radius: 5px; /* Add some border radius */

@@ -5,8 +5,6 @@ import {
 } from 'recharts';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-// Remove History import
-// import History from './History';
 
 // Function to analyze sentiment
 const analyzeSentiment = (data, targetColumn) => {
@@ -118,7 +116,7 @@ const UploadData = () => {
     <div className="upload-container">
       <div className="upload-box">
         <h2>Instructions for Uploading Dataset</h2>
-        <p>
+        <p className="upload-instructions">
           Sentiment analysis is an NLP technique that identifies and classifies emotions in text as positive,
           negative, or neutral. It helps understand opinions in reviews, social media, and feedback.
         </p>
